@@ -3,6 +3,11 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/pagehelper" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/fastdfs_client" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pagehelper" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/taotao-common" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/taotao-manager" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/taotao-manager-web" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/taotao-parent" vcs="Git" />
   </component>
 </project>
