@@ -12,7 +12,7 @@
 	<modules>
 		<module>taotao-content-interface</module>
 		<module>taotao-content-service</module>
-	</modules>
+    </modules>
 
 	<dependencies>
 		<dependency>
