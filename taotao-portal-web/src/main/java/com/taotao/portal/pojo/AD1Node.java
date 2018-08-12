@@ -1,0 +1,4 @@
+package com.taotao.portal.pojo;
+
+public class AD1Node {
+}
