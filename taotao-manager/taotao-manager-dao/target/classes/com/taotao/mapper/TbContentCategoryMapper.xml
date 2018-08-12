@@ -72,6 +72,18 @@
   <sql id="Base_Column_List" >
     id, parent_id, name, status, sort_order, is_parent, created, updated
   </sql>
+
+
+  <!--自定义sql-->
+  <select id="selectByParentId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    select
+    <include refid="Base_Column_List" />
+    from tb_content_category
+    where parent_id=#{id}
+  </select>
+
+
+
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.taotao.pojo.TbContentCategoryExample" >
     select
     <if test="distinct" >
@@ -103,6 +115,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.taotao.pojo.TbContentCategory" >
+    <selectKey keyProperty="id" resultType="long" order="AFTER">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into tb_content_category (id, parent_id, name, 
       status, sort_order, is_parent, 
       created, updated)
@@ -111,6 +126,9 @@
       #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.taotao.pojo.TbContentCategory" >
+    <selectKey keyProperty="id" resultType="long" order="AFTER">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into tb_content_category
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
