@@ -33,7 +33,9 @@ public class ContentServiceImpl implements ContentService {
         content.setUpdated(new Date());
         //插入内容表
         contentMapper.insert(content);
-
+        //同步缓存
+        //删除对应的缓存信息
+        jedisClient.hdel(INDEX_CONTENT,content.getCategoryId().toString());
         return TaotaoResult.ok();
     }
 
