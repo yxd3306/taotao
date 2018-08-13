@@ -15,8 +15,10 @@
 	<context:annotation-config/>
 	<!--redis单机版-->
 	<bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+		<constructor-arg name="poolConfig" ref="poolConfig"/>
 		<constructor-arg name="host" value="132.232.33.227"/>
 		<constructor-arg name="port" value="6379"/>
+		<constructor-arg name="timeout" value="10000" type="int"/>
 	</bean>
 	<bean id="jedisClientPool" class="com.taotao.jedis.JedisClientPool"/>
 
@@ -55,11 +57,21 @@
 	<bean id="jedisClientCluster" class="com.taotao.jedis.JedisClientCluster"/>-->
 
 	<!--redis连接池-->
-	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-		<property name="maxIdle" value="10000" />
-		<property name="maxTotal" value="10000" />
-		<property name="maxWaitMillis" value="1000" />
+	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+
+		<property name="maxTotal" value="200" />
+		<!--最大空闲连接数-->
+		<property name="maxIdle" value="50" />
+		<!--初始化连接数-->
+		<property name="minIdle" value="0"/>
+		<!--最大等待时间-->
+		<property name="maxWaitMillis" value="15000" />
+		<!--对拿到的connection进行validateObject校验-->
 		<property name="testOnBorrow" value="false" />
+		<!--在进行returnObject对返回的connection进行validateObject校验-->
+		<property name="testOnReturn" value="false" />
+		<!--定时对线程池中空闲的链接进行validateObject校验-->
+		<property name="testWhileIdle" value="false" />
 	</bean>
-	
+
 </beans>
