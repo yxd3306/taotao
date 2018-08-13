@@ -39,28 +39,21 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public List<TbContent> getContentByCid(long cid) {
-        //先查缓存
-        //添加缓存不能影响正常业务逻辑
-        try {
-            //查询缓存
+        try{
+            //先查缓存
             String json = jedisClient.hget(INDEX_CONTENT, cid + "");
-            //解决缓存穿透，使用双重检测锁，synchronized
-            if (StringUtils.isNoneBlank(json)) {
+            if(StringUtils.isNoneBlank(json)){
                 //缓存数据不为空
                 List<TbContent> list = JsonUtils.jsonToList(json, TbContent.class);
-                System.out.println("缓存数据存在，直接返回list");
                 return list;
-            } else {
+            }else{
                 //缓存中没有数据锁定当前用户，查数据库
                 synchronized (this) {
-                    //查询缓存
                     json = jedisClient.hget(INDEX_CONTENT, cid + "");
                     if (StringUtils.isNoneBlank(json)) {
                         List<TbContent> list = JsonUtils.jsonToList(json, TbContent.class);
-                        System.out.println("锁，缓存数据存在，直接返回list");
                         return list;
                     }else{
-                        System.out.println("缓存数据不存在，差数据库");
                         //缓存中没有查数据库
                         TbContentExample example = new TbContentExample();
                         TbContentExample.Criteria criteria = example.createCriteria();
@@ -72,12 +65,11 @@ public class ContentServiceImpl implements ContentService {
                         jedisClient.hset(INDEX_CONTENT, cid + "", JsonUtils.objectToJson(list));
                         return list;
                     }
-
                 }
             }
-        } catch (Exception e) {
+        }catch (Exception e){
             e.printStackTrace();
+            return null;
         }
-        return null;
     }
 }
