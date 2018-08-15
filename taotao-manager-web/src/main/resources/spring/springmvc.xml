@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- 加载属性文件 -->
-	<context:property-placeholder location="classpath:resource/resource.perproties"/>
+	<context:property-placeholder location="classpath:resource/resource.properties"/>
 	<!-- 配置注解驱动 -->
 	<mvc:annotation-driven />
 	<!-- 视图解析器 -->
@@ -43,5 +43,6 @@
 	<dubbo:reference interface="com.taotao.service.ItemCatService" id="itemCatService" />
 	<dubbo:reference interface="com.taotao.content.service.ContentCategoryService" id="contentCategoryService" />
 	<dubbo:reference interface="com.taotao.content.service.ContentService" id="contentService" />
+	<dubbo:reference interface="com.taotao.search.service.SearchItemService" id="searchItemService" />
 
 </beans>
