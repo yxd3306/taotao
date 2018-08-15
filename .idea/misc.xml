@@ -5,6 +5,8 @@
     <file type="web" url="file://$PROJECT_DIR$/taotao-manager-web" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-manager/taotao-manager-service" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-portal-web" />
+    <file type="web" url="file://$PROJECT_DIR$/taotao-search-web" />
+    <file type="web" url="file://$PROJECT_DIR$/taotao-search/taotao-search-service" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -12,14 +14,24 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
+        <option value="$PROJECT_DIR$/taotao-content/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-manager/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-search/pom.xml" />
         <option value="$PROJECT_DIR$/fastdfs_client/pom.xml" />
         <option value="$PROJECT_DIR$/pagehelper/pom.xml" />
         <option value="$PROJECT_DIR$/taotao-common/pom.xml" />
-        <option value="$PROJECT_DIR$/taotao-manager/pom.xml" />
         <option value="$PROJECT_DIR$/taotao-manager-web/pom.xml" />
         <option value="$PROJECT_DIR$/taotao-parent/pom.xml" />
-        <option value="$PROJECT_DIR$/taotao-content/pom.xml" />
         <option value="$PROJECT_DIR$/taotao-portal-web/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-search-web/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-content/taotao-content-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-content/taotao-content-service/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-manager/taotao-manager-dao/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-manager/taotao-manager-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-manager/taotao-manager-pojo/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-manager/taotao-manager-service/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-search/taotao-search-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-search/taotao-search-service/pom.xml" />
       </list>
     </option>
   </component>
