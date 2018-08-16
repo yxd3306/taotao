@@ -12,7 +12,7 @@ public class SearchItem implements Serializable {
     private String title;
     private String sell_point;
     private long price;
-    private String images;
+    private String image;
     private String category_name;
     private String item_desc;
 
@@ -48,12 +48,12 @@ public class SearchItem implements Serializable {
         this.price = price;
     }
 
-    public String getImages() {
-        return images;
+    public String getImage() {
+        return image;
     }
 
-    public void setImages(String images) {
-        this.images = images;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getCategory_name() {
