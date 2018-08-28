@@ -12,7 +12,7 @@
 	
 	<!--单机版solr连接-->
 	<bean id="httpSolrClient" class="org.apache.solr.client.solrj.impl.HttpSolrClient">
-		<constructor-arg name="builder" value="http://132.232.33.227:8983/solr/collection2"/>
+		<constructor-arg name="builder" value="http://192.168.56.131:8983/solr/collection1"/>
 	</bean>
 	
 </beans>
